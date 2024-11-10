@@ -1,1 +1,1 @@
-worker: python hola.py
+web: python hola.py
