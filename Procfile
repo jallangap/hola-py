@@ -1,1 +1,0 @@
-web: docker build -t hola-python -f Dockerfile . && docker run --rm hola-python
