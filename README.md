@@ -1,90 +1,62 @@
-# Python Project
+# Hola-PY
+This repository contains a basic Python program that outputs "Hola, mundo" to the terminal. It’s a simple demonstration for those who are new to Python and want to see a "Hello World" style program.
 
-This project is a simple Python application that prints "Hola, mundo" to the console. The application is designed to run in a Docker container, which makes it easy to deploy and execute.
+## Description 
+The program executes a single line of Python code that prints "Hola, mundo" to the terminal. Useful as a quick example or starting point for working with Python.
 
-## Table of Contents
+## Requirements 
+- Python 3.9 or higher
+- [Docker](https://docs.docker.com/get-started/get-docker/) installed on your system to build and run the container.
 
-- [Project Structure](#project-structure)
-- [Dockerfile Explanation](#dockerfile-explanation)
-- [Requirements](#requirements)
-- [Setup and Execution](#setup-and-execution)
-  - [Building the Docker Image](#building-the-docker-image)
-  - [Running the Docker Container](#running-the-docker-container)
-  - [Running the Script Locally](#running-the-script-locally)
-- [License](#license)
-
-## Project Structure
-
-The project contains the following files:
-
-/app ├── Dockerfile └── hola.py
-
-
-- **Dockerfile**: Specifies the instructions to create a Docker image.
-- **hola.py**: Contains the Python code that prints "Hola, mundo".
-
-## Dockerfile Explanation
-
-The `Dockerfile` is structured as follows:
-
-dockerfile
-
-FROM python:3.9
-
-WORKDIR /app
-
-COPY hola.py /app/hola.py
-
-CMD ["python", "hola.py"]
-
-
-## Dockerfile Steps:
-```markdown
-Base Image: The base image used is python:3.9, which includes Python version 3.9 and its necessary dependencies.
-Working Directory: The WORKDIR /app command sets /app as the working directory inside the container.
-File Copy: The COPY instruction copies hola.py from the local directory to the /app directory in the container.
-Command Execution: The CMD command specifies that hola.py should be executed with Python when the container starts.
+## How to run the program: 
+```bash
+python hola.py
 ```
+
+## Dockerization 
+### Step-by-Step Guide
+1. **Build the Docker Image**
+
+   Run the following command to create the Docker image:
+
+   ```bash
+   docker build -t hola-py .
+   ```
+
+2. **Tag the Image**
+
+   Assign a tag to the Docker image for easy identification:
+
+   ```bash
+   docker tag hola-py andy3dub/hola-py:latest
+   ```
+
 3. **Push Image to Docker Hub**
 
    Push the tagged image to your Docker Hub repository:
 
    ```bash
-   docker push andy3dub/hola-rb:latest
+   docker push andy3dub/hola-py:latest
    ```
 
-## Requirements
-[Docker](https://docs.docker.com/get-started/get-docker/) installed on your system to build and run the container.
-Alternatively, Python installed on your system if you want to run the script locally without Docker.
+## Deployment and Continuous Integration
 
-## Setup and Execution
-Follow these instructions to build and run the Docker container for this project.
+This project can be deployed using Railway, a platform that simplifies deployment with automatic integration from GitHub repositories.
 
-## Building the Docker Image
-To build the Docker image, open a terminal in the project directory and run the following command:
+1. **Connecting to Railway**: 
+   After pushing changes to the GitHub repository, Railway will automatically detect updates in the repository and begin the deployment process.
 
-docker build -t hola-py .
+2. **Deployment Status**:
+   Upon a successful deployment, Railway displays a **Deployment successful** message, confirming that the application is live and functioning as expected.
 
-This command will create an image named python-holamundo based on the instructions in the Dockerfile.
+3. **GitHub Integration**:
+   GitHub provides continuous integration feedback on each push. After tests and checks are completed, a **All checks have passed** message will appear in the repository, with indicators like **2 successful checks**, ensuring that the project is stable and ready for production.
 
-Running the Docker Container
-After building the image, you can run the container with the following command:
+These integrations help maintain deployment consistency and verify code integrity before changes are live.
 
-docker run hola-py
+## Additional Files
+- **Dockerfile**: Configures the environment to run `hola.py` in a Docker container.
 
-This command will start the container and execute hola.py, displaying the following output:
-
-Hola, mundo
-
-
-Running the Script Locally
-If you prefer to run the Python script directly on your machine without Docker, you can use the following command (assuming Python 3 is installed):
-
-python hola.py
-
-This will also output:
-
-Hola, mundo
-
-
-
+## Links 
+- **GitHub Repository**: [Hola-PY on GitHub](https://github.com/jallangap/hola-py)
+- **Docker Hub Repository**: [Hola-PY on Docker Hub](https://hub.docker.com/r/andy3dub/hola-py)
