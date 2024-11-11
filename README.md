@@ -27,7 +27,7 @@ The project contains the following files:
 
 The `Dockerfile` is structured as follows:
 
-```dockerfile
+dockerfile
 
 FROM python:3.9
 
@@ -45,7 +45,7 @@ File Copy: The COPY instruction copies hola.py from the local directory to the /
 Command Execution: The CMD command specifies that hola.py should be executed with Python when the container starts.
 
 Requirements
-**Docker** installed on your system to build and run the container. https://docs.docker.com/get-started/get-docker/
+[Docker](https://docs.docker.com/get-started/get-docker/) installed on your system to build and run the container.
 Alternatively, Python installed on your system if you want to run the script locally without Docker.
 
 Setup and Execution
