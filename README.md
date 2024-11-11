@@ -38,20 +38,20 @@ COPY hola.py /app/hola.py
 CMD ["python", "hola.py"]
 
 
-Dockerfile Steps:
+## Dockerfile Steps:
 Base Image: The base image used is python:3.9, which includes Python version 3.9 and its necessary dependencies.
 Working Directory: The WORKDIR /app command sets /app as the working directory inside the container.
 File Copy: The COPY instruction copies hola.py from the local directory to the /app directory in the container.
 Command Execution: The CMD command specifies that hola.py should be executed with Python when the container starts.
 
-Requirements
+## Requirements
 [Docker](https://docs.docker.com/get-started/get-docker/) installed on your system to build and run the container.
 Alternatively, Python installed on your system if you want to run the script locally without Docker.
 
-Setup and Execution
+## Setup and Execution
 Follow these instructions to build and run the Docker container for this project.
 
-Building the Docker Image
+## Building the Docker Image
 To build the Docker image, open a terminal in the project directory and run the following command:
 
 docker build -t hola-py .
