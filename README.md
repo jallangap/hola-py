@@ -44,6 +44,14 @@ Working Directory: The WORKDIR /app command sets /app as the working directory i
 File Copy: The COPY instruction copies hola.py from the local directory to the /app directory in the container.
 Command Execution: The CMD command specifies that hola.py should be executed with Python when the container starts.
 
+3. **Push Image to Docker Hub**
+
+   Push the tagged image to your Docker Hub repository:
+
+   ```bash
+   docker push andy3dub/hola-rb:latest
+   ```
+
 ## Requirements
 [Docker](https://docs.docker.com/get-started/get-docker/) installed on your system to build and run the container.
 Alternatively, Python installed on your system if you want to run the script locally without Docker.
