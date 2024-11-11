@@ -39,11 +39,12 @@ CMD ["python", "hola.py"]
 
 
 ## Dockerfile Steps:
+```markdown
 Base Image: The base image used is python:3.9, which includes Python version 3.9 and its necessary dependencies.
 Working Directory: The WORKDIR /app command sets /app as the working directory inside the container.
 File Copy: The COPY instruction copies hola.py from the local directory to the /app directory in the container.
 Command Execution: The CMD command specifies that hola.py should be executed with Python when the container starts.
-
+```
 3. **Push Image to Docker Hub**
 
    Push the tagged image to your Docker Hub repository:
